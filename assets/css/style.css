@@ -1,0 +1,58 @@
+#first-page, #second-page {
+	background-image: url(../images/food-background4.jpg);
+}
+
+
+.page-header {
+	background-repeat: no-repeat;
+	padding: 10px;
+	background-position: center;
+}
+
+.container {
+	/*background: #e6ffe6;*/
+	background: #ffccd2;
+}
+h1 {
+	font-family: 'Berkshire Swash', cursive;
+	font-size: 40px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
+
+.input-group {
+	
+}
+
+#submit-btn {
+	
+	margin: 5px;
+}
+
+.text-box {
+	margin: 20px;
+	background: white;
+	padding: 10px;
+}
+#second-page {
+	
+}
+
+#pics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	background-color: blue;
+	margin: 10px;
+
+}
+
+#pics {
+    border: 1px solid green;
+    background-color: white;
+    height: 100px;
+    width: 100px;
+}
