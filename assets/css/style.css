@@ -1,4 +1,4 @@
-#first-page, #second-page {
+#first-page, #second-page, #third-page {
 	background-image: url(../images/food-background4.jpg);
 }
 
@@ -15,7 +15,7 @@
 }
 h1 {
 	font-family: 'Berkshire Swash', cursive;
-	font-size: 40px;
+	font-size:60px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
@@ -41,18 +41,36 @@ h1 {
 	
 }
 
-#pics {
-    display: flex;
+#pic-appear-here, #item {
+    /*display: flex;
+    flex-flow: row-wrap;
     justify-content: space-between;
     align-items: center;
-	background-color: blue;
-	margin: 10px;
-
+	margin: 20px;*/
+	 padding-bottom: 20px;
+	 padding-top: 20px;
+  	margin: 0;
+  	list-style: none;
+  	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: flex;
+  	-webkit-flex-flow: row wrap;
+  	justify-content: space-around;
 }
 
-#pics {
+ #item {
     border: 1px solid green;
-    background-color: white;
     height: 100px;
     width: 100px;
+ 
+}
+
+/*#pics {
+	flex-wrap: wrap;
+}*/
+
+.nutrition {
+	
 }
