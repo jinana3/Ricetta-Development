@@ -27,6 +27,7 @@ console.log(queryURL);
             foodImage.attr("recipeId", recipeId);
            	var foodName = results[i].recipeName;
             var p = $("<p>").text("I am craving " + foodName);
+            
             gifDiv.prepend(container);
             gifDiv.prepend(p);
             container.prepend(foodImage);
