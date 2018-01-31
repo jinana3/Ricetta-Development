@@ -31,7 +31,7 @@ function getInfo() {
             foodImage.addClass("imagelink");
            	
             //put everything on the screen
-            var p = $("<p>").text("I am craving " + foodName);
+            var p = $("<p>").text(foodName);
             container.prepend(foodImage);
             gifDiv.prepend(container);
             gifDiv.prepend(p);

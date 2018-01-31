@@ -3,13 +3,18 @@
 }
 
 
-.page-header {
+#row-header {
 	background-repeat: no-repeat;
 	padding: 10px;
 	background-position: center;
+	color: gray;
+	text-align: right;
 }
 
-.container {
+#button-nav {
+	text-align: left;
+}
+#row-body {
 	/*background: #e6ffe6;*/
 	background: #ffccd2;
 }
@@ -20,6 +25,7 @@ h1 {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
+	
 }
 
 
