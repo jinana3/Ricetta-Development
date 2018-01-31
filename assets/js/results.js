@@ -56,7 +56,7 @@ function getOutput(item){
   var videoId = item.id.videoId;
   var title = item.snippet.title;
   //var description  = item.snippet.description;
-  var thumb = item.snippet.thumbnails.medium.url;
+  var thumb = item.snippet.thumbnails.default.url;
   var videoDate = item.snippet.publishedAt;
   var channelTitle = item.snippet.channelTitle;
 
