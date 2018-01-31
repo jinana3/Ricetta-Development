@@ -63,7 +63,7 @@ h1 {
   	display: -webkit-flex;
   	display: flex;
   	-webkit-flex-flow: row wrap;
-  	justify-content: space-around;
+  	justify-content: space-between;
 }
 
  #item {
@@ -77,6 +77,11 @@ h1 {
 	flex-wrap: wrap;
 }*/
 
+
+#review {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
 .nutrition {
 	
 }

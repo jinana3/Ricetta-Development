@@ -9,6 +9,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     
@@ -21,45 +23,59 @@
 <body id="third-page">
 	<div class="container">
 
-	<div class="row" id="row-header">
-		<div class="page-header">
-			<h1>Ricetta</h1>
-		</div>
-	
-		<br>
-		<div class="row" id="button-nav">
-			<button onclick="location.href = 'ricetta.html'" id="submit-btn">Home</button>
-			<button onclick="location.href = 'navigation.html'";" id="submit-btn">Go Back</button>
-		</div>
-	</div>
-
-	<div class = "row" id="row-body">
-		<br>
-		
-
-
-		<div class = "col-lg-6">
-			<div class="row">
-				<div class="col-lg-12">
-					
-					
-					<div id ="showIngredients">
-						<div></div>
-					</div>
-					<div id="searchpicture">
-					</div>
-					<div> 
-						Nutrition
-						<div id="nutrition"></div>
-					</div>
-					<div>
-						Ingredient
-						<div id="text"></div>
-					</div>				
-				</div>
+		<div class="row" id="row-header">
+			<div class="page-header">
+				<h1>Ricetta</h1>
 			</div>
-			<div class="row">
-				<div class="column-lg-12">
+			<br>
+			<div class="row" id="button-nav">
+				<button onclick="location.href = 'ricetta.html'" class="btn btn-default" id="submit-btn">Home</button>
+				<button onclick="location.href = 'ricetta.html'" class="btn btn-default" id="submit-btn">Go Back</button>
+			</div>
+		</div>
+
+		<div class = "row" id="row-body">
+			<br>
+			<div class = "col-xs-6 col-sm-6  col-md-6 col-lg-6" id="recipe-text">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div id ="showIngredients">
+							<div></div>
+						</div>
+						<div id="searchpicture">
+						</div>
+						<div> 
+							Nutrition
+							<div id="nutrition"></div>
+						</div>
+						<div>
+							Ingredient
+							<div id="text"></div>
+						</div>				
+					</div>
+				</div>	
+			</div>
+			<div class = "col-xs-6 col-sm-6  col-md-6 col-lg-6">
+				<div class = "row"><br></div>
+				<div class = "row">
+					<section>
+						<div id = "iframe-player"></div>
+			        	<!-- <form id = "search-form" name = "search-form" onsubmit="return search()">
+			          	<div class = "fieldcontainer">
+			            	<input type = "search" id="query" class = "search-field" placeholder="Search YouTube Video">
+			            	<input type = "submit" name = "search-btn" id="search-btn" value="Search">
+			          	</div>
+			        	</form>
+			        	<br> -->
+			        	<ul id="results"></ul>
+		      		</section>
+		    	</div>
+			</div>
+			<br>
+			<div class="row" id="reviews">
+
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+				<div class="col-xs-6 col-sm-6  col-md-6 col-lg-6">
 					<div class="input-Group" id="form-div">
 						<div id="rating">
 	  						<span>★</span>
@@ -69,9 +85,9 @@
 	  						<span>★</span>
 						</div>
 	      
-	     				<form>
-	        	         	Name
-	        				<br>
+	   					<form>
+	       	         		Name
+	       					<br>
 	        				<input type="text"  class="form-control" name="name" id="name">
 	        				<br>
 	        				Comment
@@ -85,26 +101,10 @@
 					<br>
 					<div class="showcomment"></div>
 				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
 			</div>
 		</div>
-		<div class = "col-lg-6">
-			<div class = "row"><br></div>
-			<div class = "row">
-				<section>
-					<div id = "iframe-player"></div>
-			        <!-- <form id = "search-form" name = "search-form" onsubmit="return search()">
-			          <div class = "fieldcontainer">
-			            <input type = "search" id="query" class = "search-field" placeholder="Search YouTube Video">
-			            <input type = "submit" name = "search-btn" id="search-btn" value="Search">
-			          </div>
-			        </form>
-			        <br> -->
-			        <ul id="results"></ul>
-		      	</section>
-		      </div>
-		</div>
 	</div>
-</div>
 	<footer>
 		<p class="text-muted text-muted-footer text-center">
 			<small>
