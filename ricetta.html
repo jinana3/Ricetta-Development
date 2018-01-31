@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ricetta</title>
-
+    <meta charset="UTF-8">
+    <title>Ricetta</title>
     
+    <!--Jquery and Bootstrap CDN-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-      <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-      <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
-
-      
-
-
-
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    
+    <!-- Ricetta page CSS and google fonts-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
 </head>
 
 <body id="first-page">
-
   <div class="container">
       <div class="page-header">
          <h1>Ricetta</h1> 
@@ -30,55 +25,36 @@
 
       <div class="row">
         <div class="col-lg-5"></div>
-        <div class="col-lg-3">
+        <div class="col-lg-2">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="What are you craving?" aria-describedby="basic-addon2">
+            <input type="text" id = "form-control" class="form-control" placeholder="What are you craving?" aria-describedby="basic-addon2">
           </div>
+        </div>
+        <div class="col-lg-1">
+          <button  id="submit-btn">Submit</button>
         </div>
         <div class="col-lg-4"></div>
       </div>
 
       <div class="row">
-        <div class="col-lg-5"></div>
-        <div class="col-lg-4">
-          <button  id="submit-btn">Submit</button>
-        </div>
-        <div class="col-lg-3"></div>
-      </div>
-
-
-      <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
           <div class="text-box">
-            <p>Text goes here.</p>
+            <p>A recipe is a list of ingredients and a set of instructions that tell you how to cook something. But more importantly, a recipe is a path to pleasure. Experience the world here at your finger tips.</p>
           </div>
         </div>
         <div class="col-lg-3"></div>
-      </div>
-        
-
-
-
-
-    
+      </div>   
   </div>
+  <footer>
+    <p class="text-muted text-muted-footer text-center">
+      <small>
+          &copy; Copyright 2017 Ricetta. All Rights Reserved
+      </small>
+    </p>
+  </footer>
 
-
-
-
-
-
-
-
-
-<footer>
-  <p class="text-muted text-muted-footer text-center">
-        &copy; Copyright 2017 Ricetta. All Rights Reserved
-      </p>
-</footer>
-
-
-    <script src="assets/js/ricetta.js"></script>
+<!-- javascript for Ricetta page -->
+<script src="assets/js/ricetta.js"></script>
 </body>
 </html>
