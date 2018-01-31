@@ -1,58 +1,64 @@
-var apikey = "db88af5b39df5d4f60ed1d5fa4c18f28"
-var appid ="a046575d"
-var userInput = localStorage.getItem("userInput")
-console.log(userInput);
-
-var queryURL ="http://api.yummly.com/v1/api/recipes?_app_id="+appid+"&_app_key="+apikey+"&q=" + userInput +
-        "&requirePictures=true&maxResult=10&start=10";
-
-
-
-console.log(queryURL);
+//here we use Yummily API to retrive info on search term
+function getInfo() {
+    var apikey = "db88af5b39df5d4f60ed1d5fa4c18f28"
+    var appid = "a046575d"
+    var userInput = localStorage.getItem("userInput")
+    var queryURL = "http://api.yummly.com/v1/api/recipes?_app_id="+appid+"&_app_key="+apikey+"&q=" + userInput +
+            "&requirePictures=true&maxResult=10&start=10";
 
     $.ajax({
              url: queryURL,
              method: 'GET'
-            }).done(function(response){
+            }).then(function(response){
 
+        //save response matches on search term
         var results = response.matches;
-        console.log(response.matches);
-
-
+        //loop through results to populate html with images and recipe titles
         for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div class='item'>");
+            //container can store the image tag as well as store an attribute href
             var container = $("<a>");
            	var foodImage = $("<img>");
-            var recipeId= results[i].id;
+
+            var foodName = results[i].recipeName;
+            var recipeId = results[i].id;
+            //save recipeId in tag for recipe search in next page
             foodImage.attr("recipeId", recipeId);
-           	var foodName = results[i].recipeName;
+            foodImage.attr("recipeName", foodName);
+            //add link to photo to image tag
+            foodImage.attr("src", results[i].imageUrlsBySize[90]);
+            //give image tag a class for click function later
+            foodImage.addClass("imagelink");
+           	
+            //put everything on the screen
             var p = $("<p>").text("I am craving " + foodName);
-            
+            container.prepend(foodImage);
             gifDiv.prepend(container);
             gifDiv.prepend(p);
-            container.prepend(foodImage);
-			     foodImage.attr("src", results[i].imageUrlsBySize[90]);
-           foodImage.addClass("imagelink");
-           //localStorage.setItem("recipe", results[i].ingredients.recipeName);
-            container.attr("href","results.html");
             $("#pic-appear-here").prepend(gifDiv);
-          
+
+            //every container will have the link to the next page
+            container.attr("href","results.html");      
           };
-        $(".imagelink").on("click",function(response){
-          localStorage.setItem("recipeId", $(this).attr("recipeId"));
-          console.log(recipeId);
-
-
-
-
-          });
-
-
 
     });
+}
 
+//when a recipe is chosen, function to store the information of that recipe
+function storeId(){
+    localStorage.setItem("recipeId", $(this).attr("recipeId"));
+    localStorage.setItem("recipeName", $(this).attr("recipeName"));
+    //the container href attribute will take user to next page
+}
 
-            //onclick the recipe and it takes to the results page
-            //it also stores the recipe name in the local page 
-            //third page it will take the api call and pull the reciple
-            //it will take the 
+//---------------------------------apply to app-------------------------------------//
+
+$( document ).ready(function() {
+  //display the search term results
+  getInfo();
+  //Adding a click event listener to all elements with a class of "imagelink"
+  //onclick the recipe and it takes to the results page
+  //it also stores the recipe name in the local page 
+  //third page it will take the api call and pull the recipe
+  $(document).on("click", ".imagelink", storeId);
+});

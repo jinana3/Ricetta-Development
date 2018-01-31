@@ -4,78 +4,97 @@
 	<meta charset="UTF-8">
 	<title>Ricetta</title>
 
-		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<!--Jquery and Bootstrap CDN-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  		<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-  		
-  		
-
-
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    
+    <!-- Ricetta page CSS and google fonts-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
 
 </head>
 
 <body>
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h1>Ricetta</h1>
-
-				<button onclick="location.href = 'ricetta.html'";" id="submit-btn">Home</button>
-				<div id ="showIngredients">
-					<div></div>
-				</div>
-				<div id="searchpicture">  
-					
-				</div>
-				<div> Nutrition
-					<div id="nutrition"></div>
-				</div>
-				<div>Ingredient
-					<div id="text"></div>
-				</div>
-				
-    			
-				
-			</div>
-		</div>
-		<div class="row">
-			<div class="column-lg-12">
-				<div class="input-Group" id="form-div">
-					<div id="rating">
-  						<span>★</span>
- 						<span>★</span>
-  						<span>★</span>
-  						<span>★</span>
-  						<span>★</span>
+		<div class = "col-lg-6">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Ricetta</h1>
+					<button onclick="location.href = 'ricetta.html'" id="submit-btn">
+						Home
+					</button>
+					<div id ="showIngredients">
+						<div></div>
 					</div>
-      
-     				<form>
-        	         Name
-        			<br>
-        			<input type="text"  class="form-control" name="name" id="name">
-        			<br>
-        
-        			Comment
-        			<br>
-        			<input type="text"  class="form-control" name="comment" id="comment">
-        			<br>
-        			<button id="submit-btn">Submit</button>
-				</form>
+					<div id="searchpicture">
+					</div>
+					<div> 
+						Nutrition
+						<div id="nutrition"></div>
+					</div>
+					<div>
+						Ingredient
+						<div id="text"></div>
+					</div>				
+				</div>
 			</div>
-			<br>
-			<br>
-			<div class="showcomment"><div>
+			<div class="row">
+				<div class="column-lg-12">
+					<div class="input-Group" id="form-div">
+						<div id="rating">
+	  						<span>★</span>
+	 						<span>★</span>
+	  						<span>★</span>
+	  						<span>★</span>
+	  						<span>★</span>
+						</div>
+	      
+	     				<form>
+	        	         	Name
+	        				<br>
+	        				<input type="text"  class="form-control" name="name" id="name">
+	        				<br>
+	        				Comment
+	        				<br>
+	        				<input type="text"  class="form-control" name="comment" id="comment">
+	        				<br>
+	        				<button id="submit-btn">Submit</button>
+						</form>
+					</div>
+					<br>
+					<br>
+					<div class="showcomment"></div>
+				</div>
 			</div>
 		</div>
-	
+		<div class = "col-lg-6">
+			<div class = "row"><br></div>
+			<div class = "row">
+				<section>
+					<div id = "iframe-player"></div>
+			        <!-- <form id = "search-form" name = "search-form" onsubmit="return search()">
+			          <div class = "fieldcontainer">
+			            <input type = "search" id="query" class = "search-field" placeholder="Search YouTube Video">
+			            <input type = "submit" name = "search-btn" id="search-btn" value="Search">
+			          </div>
+			        </form>
+			        <br> -->
+			        <ul id="results"></ul>
+		      	</section>
+		      </div>
+		</div>
 	</div>
-<footer>
-	<p class="text-muted text-muted-footer text-center">
-        &copy; Copyright 2017 Ricetta. All Rights Reserved
-      </p>
-</footer>
+	<footer>
+		<p class="text-muted text-muted-footer text-center">
+			<small>
+	        	&copy; Copyright 2017 Ricetta. All Rights Reserved
+	        </small>
+	      </p>
+	</footer>
 <script src="assets/js/results.js"></script>
 </body>
 </html>
