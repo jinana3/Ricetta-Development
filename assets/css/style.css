@@ -53,8 +53,9 @@ h1 {
     justify-content: space-between;
     align-items: center;
 	margin: 20px;*/
-	 padding-bottom: 20px;
-	 padding-top: 20px;
+	 /*padding-bottom: 20px;
+	 padding-top: 20px;*/
+	 padding: 20px;
   	margin: 0;
   	list-style: none;
   	display: -webkit-box;
