@@ -10,7 +10,7 @@
 // </iframe>
 function playVideo(){
   var videoId = $(this).attr("videoId");
-  var url = "http://www.youtube.com/embed/" + videoId + "?enablejsapi=1";
+  var url = "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1";
   var width = "540";
   var height = "290";
   var frameborder = "0";
@@ -82,7 +82,7 @@ function getRecipe(){
     var apikey = "db88af5b39df5d4f60ed1d5fa4c18f28";
     var appid = "a046575d";
     var recipe = localStorage.getItem("recipeId");
-    var queryURL2 = "http://api.yummly.com/v1/api/recipe/"+recipe+"?_app_id=a046575d&_app_key=db88af5b39df5d4f60ed1d5fa4c18f28";
+    var queryURL2 = "https://api.yummly.com/v1/api/recipe/"+recipe+"?_app_id=a046575d&_app_key=db88af5b39df5d4f60ed1d5fa4c18f28";
 
     $.ajax({
            url: queryURL2,
