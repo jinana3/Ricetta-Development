@@ -57,6 +57,7 @@ function printImage(object){
             var recipeId = object.recipeId;
             //save recipeId in tag for recipe search in next page
             foodImage.attr("recipeId", recipeId);
+            console.log(recipeId);
             foodImage.attr("recipeName", foodName);
             //add link to photo to image tag
             foodImage.attr("src", object.image);

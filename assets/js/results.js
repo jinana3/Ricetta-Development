@@ -39,7 +39,6 @@ function search(query){
       type: 'video',
       key: 'AIzaSyDluyRj4QxUQiXK1Zp1JQlSJxlDa9y4oGs'},
       function(data){
-        console.log(data);
         //now we have data returned, need to display on screen
         $.each(data.items,function(i,item){
           //GetOuput
@@ -62,7 +61,7 @@ function getOutput(item){
 
   // 
   var output = 
-        '<div class ="video-icon">' +
+        '<div class ="video-icon" videoId = '+videoId+'>' +
         '<a videoId = '+videoId+'>' +
         '<img src="'+thumb+'">' +
         '</a>' +
@@ -90,7 +89,6 @@ function getRecipe(){
            method: 'GET'
            }).then(function(response){
                 var results = response
-                console.log(response);
 
                 var gifDiv = $("<div class='item'>");
                 var container = $("<a>");
@@ -160,22 +158,25 @@ $(document).ready(function() {
 
     //firebase
     var config = {
-    		apiKey: "AIzaSyBrNWbIXP9hccU1MO0CgkPX-5aP2tlwkmU",
-    		authDomain: "comment-ddf73.firebaseapp.com",
-    		databaseURL: "https://comment-ddf73.firebaseio.com",
-    		projectId: "comment-ddf73",
-    		storageBucket: "",
-    		messagingSenderId: "284278290092"
-    		};
+      apiKey: "AIzaSyDO5Q2w30esvq1RswNJgESoMwfveH6UX10",
+      authDomain: "ricetta-f4fd9.firebaseapp.com",
+      databaseURL: "https://ricetta-f4fd9.firebaseio.com",
+      projectId: "ricetta-f4fd9",
+      storageBucket: "",
+      messagingSenderId: "129866802442"
+    };
     firebase.initializeApp(config);
     var database = firebase.database();
 
+    //items we want to save to database
     var recipeCol = localStorage.getItem("recipeId");
     var name = "";
     var comment = "";
       
-    $(document).on("click","#submit-btn", function(event){
+    //add comments to firebase
+    $(document).on("click","#add-comment-btn", function(event){
       event.preventDefault();
+
       name = $("#name").val();
       comment = $("#comment").val();
       
@@ -186,16 +187,15 @@ $(document).ready(function() {
       });
     });
 
+    //display comments from firebase
     database.ref().on("child_added", function(childSnapshot) {
 
-        // Log everything that's coming out of snapshot
-        console.log(childSnapshot.val().name);
-        console.log(childSnapshot.val().comment);
-
-        var commentbox=$("<div>");
-        commentbox.append(childSnapshot.val().name + ": ");
-        commentbox.append(childSnapshot.val().comment);
-        $(".showcomment").append(commentbox);
+        if (childSnapshot.val().recipeCol === recipeCol){
+          var commentbox=$("<div>");
+          commentbox.append(childSnapshot.val().name + ": ");
+          commentbox.append(childSnapshot.val().comment);
+          $(".showcomment").append(commentbox);
+        }
     });
 
 //------------------------------------closing document . ready----//
