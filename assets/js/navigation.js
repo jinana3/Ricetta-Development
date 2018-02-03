@@ -4,7 +4,7 @@ function getInfo() {
     var appid = "a046575d"
     var userInput = localStorage.getItem("userInput")
     var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id="+appid+"&_app_key="+apikey+"&q=" + userInput +
-            "&requirePictures=true&maxResult=10&start=12";
+            "&requirePictures=true&maxResult=12&start=10";
     $.ajax({
              url: queryURL,
              method: 'GET'
