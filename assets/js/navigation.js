@@ -4,7 +4,7 @@ function getInfo() {
     var appid = "a046575d"
     var userInput = localStorage.getItem("userInput")
     var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id="+appid+"&_app_key="+apikey+"&q=" + userInput +
-            "&requirePictures=true&maxResult=10&start=10";
+            "&requirePictures=true&maxResult=10&start=12";
     $.ajax({
              url: queryURL,
              method: 'GET'
@@ -55,6 +55,8 @@ function printImage(object){
 
             var foodName = object.recipeName;
             var recipeId = object.recipeId;
+            
+            console.log(object.image);
             //save recipeId in tag for recipe search in next page
             foodImage.attr("recipeId", recipeId);
             console.log(recipeId);
@@ -87,6 +89,7 @@ function storeId(){
 //---------------------------------apply to app-------------------------------------//
 
 $( document ).ready(function() {
+
   //display the search term results
   getInfo();
   //Adding a click event listener to all elements with a class of "imagelink"
